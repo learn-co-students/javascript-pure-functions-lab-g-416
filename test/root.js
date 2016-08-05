@@ -1,4 +1,5 @@
 global.expect = require('expect');
+global.sinon = require('sinon');
 
 const jsdom = require('jsdom');
 const path = require('path');
@@ -21,4 +22,4 @@ before(function(done) {
 
     return done();
   });
-}); 
+});
