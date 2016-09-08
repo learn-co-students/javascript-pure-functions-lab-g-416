@@ -1,9 +1,8 @@
 # JavaScript Pure Functions Lab
 
-## Objectives
+## Overview
 
-1. Practice writing non-side-effecting functions
-2. Practice chaining updates without mutating global state
+In ths lab, you'll write non-side-effecting functions and you'll chain updates without mutating global state. 
 
 ## Late to the party
 
@@ -19,9 +18,12 @@ for this lab are as follows:
 1. Create a `addToPlaylist()` function that takes a playlist and an episode as arguments, and returns a new array with
 the episode appended to the playlist. This function **must not modify** the original array! This function is used to
 create a playlist that also contains the finale episode.
+
 2. Create a `removeFromPlaylist()` function that takes a playlist and an episode, and returns a new array with that
 episode removed from the array. This function must also **not modify** the original array.
+
 3. Create a `getNextEpisodeInPlaylist()` function that returns the first episode in a playlist.
+
 4. Finally, to tie it all together, create a function called `bingeWatch()` that takes a playlist as its only argument.
 This function recursively calls itself: as long as there is a next episode, we watch it (by removing it from the
 playlist), and then we continue our binge watching session. If there are no more episodes in the playlist, we return the
