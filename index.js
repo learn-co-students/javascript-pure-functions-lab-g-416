@@ -11,7 +11,6 @@ const episodes = [
 ];
 
 const finaleEpisode = { id: 's06e10', title: 'The Winds of Winter' };
-
 const addToPlaylist = (playlist, episode) => [...playlist, episode];
 const removeFromPlaylist = (playlist, episode) => playlist.filter(e => e.id !== episode.id);
 const getNextEpisodeInPlaylist = playlist => playlist[0];
