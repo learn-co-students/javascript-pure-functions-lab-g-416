@@ -10,4 +10,29 @@ const episodes = [
   { id: 's06e09', title: 'Battle of the Bastards' },
 ];
 
+// tests are not passing with my code need to check on why
+
 const finaleEpisode = { id: 's06e10', title: 'The Winds of Winter' };
+
+const addToPlaylist = (playlist, episode) => [...playlist, episode];
+
+const removeFromPlaylist = (playlist, episode) => playlist.filter(e => e.id !== episode.id);
+const getNextEpisodeInPlaylist = playlist => playlist[0];
+
+function bingeWatch(playlist) {
+  if (playlist.length === 0){
+    return 'Please let there be more!';
+  }else {
+    const nextEpisode = getNextEpisodeInPlaylist(playlist);
+    return bingeWatch(removeFromPlaylist(playlist, nextEpisode));
+  }
+}
+
+
+// function removeFromPlaylist(playlist, episode){
+//   return Object.assign({}, delete playlist.episode);
+// };
+
+// function getNextEpisodeInPlaylist(playlist) {
+//   return playlist[0];
+// }
