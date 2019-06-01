@@ -11,3 +11,29 @@ const episodes = [
 ];
 
 const finaleEpisode = { id: 's06e10', title: 'The Winds of Winter' };
+
+function addToPlaylist(playlist, episode) {
+  const updatedPlaylist = [...playlist, episode]
+  return updatedPlaylist
+}
+//arrow function alternative: 
+//const addToPlaylist = (playlist, episode) => [...playlist, episode]
+
+function removeFromPlaylist(playlist, episode){
+  const newPlaylist = playlist.filter(e => e.id !== episode.id)
+  return newPlaylist
+}
+//arrow function alternative:
+//const removeFromPlaylist = (playlist, episode) => playlist.filter(e => e.id !== episode.id);
+
+const getNextEpisodeInPlaylist = playlist => playlist[0]
+
+//recursive
+function bingeWatch(playlist) {
+  if(playlist.length === 0){
+    return 'Please let there be more!'
+  }
+  //get next episode and removefromplaylist
+  const nextEp = getNextEpisodeInPlaylist(playlist)
+  return bingeWatch(removeFromPlaylist(playlist, nextEp));
+}
