@@ -28,14 +28,13 @@ function getNextEpisodeInPlaylist(playlist) {
 }
 
 function bingeWatch(playlist) {
-  let firstEpisode;
+  let nextEpisode;
   let newPlaylist = [...playlist];
   while (newPlaylist.length > 0) {
-
-    firstEpisode = getNextEpisodeInPlaylist(newPlaylist);
-    let ind = newPlaylist.findIndex(ep => ep.id === firstEpisode.id);
-    newPlaylist.splice(ind, 1);
-    return bingeWatch(newPlaylist)
+    nextEpisode = getNextEpisodeInPlaylist(newPlaylist)
+    newPlaylist = removeFromPlaylist(newPlaylist, nextEpisode)
+    debugger
+    return bingeWatch(newPlaylist);
   }
   return 'Please let there be more!';
 }
