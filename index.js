@@ -17,3 +17,25 @@ function addToPlaylist(playlist,episode){
   return newObject;
 
 }
+
+function removeFromPlaylist(playlist,episode){
+  let newObject=Object.assign({},playlist)
+  delete newObject[episode]
+  return newObject;
+}
+
+function getNextEpisodeInPlaylist(playlist){
+  return playlist[0]
+}
+
+
+function bingeWatch(playlist){
+  console.log(playlist)
+  if (playlist.length===0){
+    return 'Please let there be more!'
+  }
+  else {
+    playlist.shift()
+  }
+  bingeWatch(playlist)
+}
