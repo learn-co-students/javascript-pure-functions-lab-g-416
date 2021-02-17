@@ -13,8 +13,7 @@ const episodes = [
 const finaleEpisode = { id: 's06e10', title: 'The Winds of Winter' };
 
 function addToPlaylist(playlist,episode){
-  let newPlaylist=[]
-  newPlaylist.push(playlist)
-  newPlaylist[playlist].push(episode)
-  return newPlaylist
+  let newObject=Object.assign({},playlist,episode)
+  return newObject;
+
 }
